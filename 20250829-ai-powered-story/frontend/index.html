@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Travel Story Generator</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600&family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+            font-family: 'Roboto', Arial, sans-serif;
+            min-height: 100vh;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+        h1 {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+        }
+        form {
+            background: #fff;
+            padding: 32px 28px 24px 28px;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            min-width: 320px;
+            margin-bottom: 32px;
+        }
+        label {
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 4px;
+        }
+        select, input, textarea {
+            padding: 10px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        button {
+            background: linear-gradient(90deg, #f6d365 0%, #fda085 100%);
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            padding: 12px 0;
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        button:hover {
+            background: linear-gradient(90deg, #fda085 0%, #f6d365 100%);
+        }
+        .story {
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+            padding: 24px 20px;
+            max-width: 500px;
+            margin: 0 auto 32px auto;
+            color: #333;
+        }
+        @media (max-width: 600px) {
+            form, .story { min-width: unset; width: 90vw; }
+        }
+    </style>
+</head>
+<body>
+    <h1>AI Travel Story Generator</h1>
+    <form id="travelForm">
+        <label for="style">Who is traveling?</label>
+        <select id="style" name="style" required>
+            <option value="alone">Alone</option>
+            <option value="family">Family</option>
+            <option value="couple">Couple</option>
+        </select>
+        <label for="place">Destination</label>
+        <input type="text" id="place" name="place" placeholder="e.g. Paris, Kyoto" required>
+        <label for="duration">How long is the trip?</label>
+        <select id="duration" name="duration" required>
+            <option value="1 day">1 day</option>
+            <option value="2-3 days">2-3 days</option>
+            <option value="4-7 days">4-7 days</option>
+            <option value="more than a week">More than a week</option>
+        </select>
+        <label for="demand">Special wishes or details</label>
+        <textarea id="demand" name="demand" rows="3" placeholder="e.g. I want to see cherry blossoms, enjoy local food, relax at a spa..."></textarea>
+        <button type="submit">Create My Travel Story</button>
+    </form>
+    <div id="result"></div>
+    <script src="index.js"></script>
+</body>
+</html>
